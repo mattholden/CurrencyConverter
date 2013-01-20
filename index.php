@@ -7,18 +7,20 @@ a sense of our buying power. [I still love ya, Colin. :)]
 All of the currencies, settings, and exchange rate formulas are owned by their respective
 owners, none of which are me. This is provided purely for informational use, for folks who
 are playing games set in these worlds and need to know the approximate value of their
-money and their stuffs. If any trademark owner has a problem with their settings' currency
+money and their stuff. If any trademark owner has a problem with their settings' currency
 being here, let me know and I'll remove it. Please don't sue me. I don't have any money
 anyway.
 
 This code is made available under the MIT license. If you want to use it,
-go right ahead. Would be cool if you dropped me a line to let me know.
+go right ahead. It's available on Github at http://www.github.com/mattholden/CurrencyConverter.
+If you're going to use it, it would be really cool if you dropped me a line to let me know.
+
 Cheers!
 
 Matt Holden (matt@mattholden.com)
 
 
-Version: 	1.01
+Version: 	1.1
 Date:		1/20/2013
 
 CHANGELOG:
@@ -27,6 +29,8 @@ CHANGELOG:
 1/20/2013	Added license, changelog, and todo/wontdo comments
 			First Github commit
 
+1.10		Added some super-basic CSS stuff. Still looks like crap, but I'm not a designer, whaddya want? ;)
+1/20/2013	Added license/copyright info to the publicly visible HTML.
 ------------------------------------------------------------------------------------------------------
 FOR CONSIDERATION IN FUTURE VERSIONS
 
@@ -256,9 +260,32 @@ if ($_REQUEST["from_name"] != null && $_REQUEST["to_name"]  != null && $_REQUEST
 
 ?>
 
+<!-- Yay, ugly CSS! -->
+<style>
+<!--
+body {
+  background: #374066;
+}
+a,p,input,td {
+  font-size: 12px;
+  font-face: Arial, Verdana, Helvetica, sans-serif; /* Comic Sans MS? Naaah. */
+  font-weight: bolder;
+}
+a,p,td {
+  color: white;
+}
+h3 {
+  font-size:24px;
+  font-face: Arial, Verdana, Helvetica, sans-serif;
+  color: #AC9957;
+}
+-->
+</style>
 
 </head>
+
 <body><center>
+<H3>Simple Gaming Currency Converter</h3>
 <form name="converter" method="post" action="index.php">
 <table width="75%">
 <tr>
@@ -323,7 +350,7 @@ if ($_REQUEST["from_name"] != null && $_REQUEST["to_name"]  != null && $_REQUEST
 </td>
 </tr>
 <tr>
-<td valign="top" height=65>Amount: <input type="text" id="amount" name="amount">
+<td valign="top" height=65>Amount:<br><input type="text" id="amount" name="amount">
 <script><!--
   if (amount != 0) {
   	document.getElementById("amount").value = amount;
@@ -332,7 +359,7 @@ if ($_REQUEST["from_name"] != null && $_REQUEST["to_name"]  != null && $_REQUEST
 </script>
 
 <input type="button" value="Convert" onClick="convert();" /></td>
-<td valign="top" height=65>
+<td height=65>
 <div width=100% id="result">
 <script><!--
   document.write(result);
@@ -346,7 +373,11 @@ if ($_REQUEST["from_name"] != null && $_REQUEST["to_name"]  != null && $_REQUEST
 </tr>
 </table>
 </form>
-<br><br>
+<br><br><p>
+Current version: 1.10 (1/20/2013)<br><br>
+This currency converter is free, open source software available under the <a href="http://www.tldrlegal.com/license/mit-license">MIT License</a>. <a href="http://www.github.com/mattholden/CurrencyConverter">[Github]</a><br>
+(C) <?php echo(date("Y")); ?> <a href="http://www.mattholden.com">Matt Holden</a>.
+</p>
 </center>
 </body>
 </html>
